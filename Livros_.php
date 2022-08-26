@@ -12,9 +12,9 @@
       private $capa;
          // 2º construtor
       // vazio
-      public function __construct(){
+      // public function __construct(){
 
-      }
+      // }
    //  3º metodo mágicos , public, 
    // colar o valor do livro e depois dar desconto
      //livres

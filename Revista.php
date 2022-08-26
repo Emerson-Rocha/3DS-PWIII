@@ -4,12 +4,12 @@ include("Livros_.php");
 // herança - visibilidade protected
 // sub
 class Revista extends Livros_{
-   private $coresVestimento; //azul, vermelho, amarelo, branco
-   protected $oficio;
-   protected $tipoRev;
+    protected $coresVestimento; //azul, vermelho, amarelo, branco
+    protected $oficio;
+    protected $tipoRev;
  
- function __construct($cores){
-      //parent::__construct();
+ public function __construct($cores){
+    
       $this->coresVestimento = $cores;
    }
    //
