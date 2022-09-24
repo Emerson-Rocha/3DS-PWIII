@@ -35,6 +35,29 @@ include_once("../servidor.php");
                 <tbody>
 
                 <?php
+                      $sql = " SELECT cod_liv, titulo_liv, valor_liv FROM TB_LIVRO ";
+                       // EXECUTAR
+                       $resp =  mysqli_query($banco, $sql);
+
+                       while( $tabela =  mysqli_fetch_array($resp) ){
+                          echo "<tr>
+                                 <th scope='row'>".$tabela["cod_liv"]."</th>
+                                 <td>".$tabela["titulo_liv"]."</td>
+                                 <td>R$  ".number_format($tabela["valor_liv"], 2, ",",".")."</td> 
+                                 <td>
+                                     <a href='altLivro.php?cod_liv=".$tabela["cod_liv"]."'> 
+                                       <img src='img/edit.png' width='32' title='Editar'></a> |
+                                     
+                                       <a href='delLivro.php?cod_liv=".$tabela["cod_liv"]."'> 
+                                      <img src='img/delete.png' width='32' title='Deletar'></a>
+                                 </td>  
+                               </tr>";
+                       
+                        }
+
+
+
+
 
                    ?>
                     
@@ -53,3 +76,7 @@ include_once("../servidor.php");
 <script src="../js/popper.min.js"></script>
 
 </html>
+
+<?php
+ mysqli_close($banco);
+?>
