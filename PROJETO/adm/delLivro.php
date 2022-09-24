@@ -12,8 +12,18 @@
 <body>
     <div class="container">
 
+
 <?php
-/
+include_once("../servidor.php");
+  // fazer o codigo para deletar o produto
+   $cod_liv = $_GET["cod_liv"];
+
+   $del = "delete from  tb_livro  where cod_liv = ". $cod_liv;
+
+   mysqli_query($banco, $del);
+ 
+
+
 ?>
 </body>
 
